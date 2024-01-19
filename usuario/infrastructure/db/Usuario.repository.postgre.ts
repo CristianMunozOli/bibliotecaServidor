@@ -6,8 +6,8 @@ export default class UsuarioRepositoryPostgre implements UsuarioRepository{
     async getAllUsuarios(): Promise<Usuario[] | undefined> {
         const sql = "select * from usuarios";
         try {
-            const usuario:Usuario[] = await executeQuery(sql);    
-            return usuario;
+            const usuarios:Usuario[] = await executeQuery(sql);    
+            return usuarios;
         } catch (error) {
             console.error(error);
             return [];
@@ -22,6 +22,4 @@ export default class UsuarioRepositoryPostgre implements UsuarioRepository{
     async updateUsuario(id: String, usuario: Usuario): Promise<Usuario | undefined> {
         throw new Error("Method not implemented.");
     }
- 
-
 }
